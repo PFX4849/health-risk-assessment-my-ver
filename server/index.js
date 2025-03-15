@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 5000;
 
 const cors = require('cors');
 app.use(cors());
@@ -54,6 +54,6 @@ app.post('/api/calculate-risk', (req, res) => {
 });
 
 // Starting the server
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
